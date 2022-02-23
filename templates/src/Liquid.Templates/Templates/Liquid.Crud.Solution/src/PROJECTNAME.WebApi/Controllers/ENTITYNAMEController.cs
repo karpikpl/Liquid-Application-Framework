@@ -20,10 +20,10 @@ namespace PROJECTNAME.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get([FromRoute] int id) => await ExecuteAsync(new GetByIdENTITYNAMEQuery(id), HttpStatusCode.Created);
+        public async Task<IActionResult> Get([FromRoute] int id) => await ExecuteAsync(new GetByIdENTITYNAMEQuery(id), HttpStatusCode.OK);
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ENTITYNAMEEntity entity) => await ExecuteAsync(new PostENTITYNAMECommand(entity), HttpStatusCode.OK);
+        public async Task<IActionResult> Post([FromBody] ENTITYNAMEEntity entity) => await ExecuteAsync(new PostENTITYNAMECommand(entity), HttpStatusCode.Created);
 
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] ENTITYNAMEEntity entity) => await ExecuteAsync(new PutENTITYNAMECommand(entity), HttpStatusCode.OK);
